@@ -1,0 +1,27 @@
+{
+    "clear_build_path" : true,
+    "build_in": "img",
+    "next": [
+      {
+        "build": "docker",
+        "build_in" : "docker",
+        "config" : {
+          "base_image" : "eons/img_guest",
+          "combine": [
+            "mysql:latest"
+          ],
+          "filesystems": [
+            {
+              "name": "data",
+              "mount": "/var/lib/mysql"
+            }
+          ],
+          "image_name" : "eons/guest_mysql",
+          "image_os" : "alpine",
+          "tags" : [
+            "latest"
+          ]
+        }
+      }
+    ]
+  }
